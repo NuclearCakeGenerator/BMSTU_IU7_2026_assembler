@@ -1,6 +1,7 @@
 .vs/
 **/out/
 **/temp/
+.venv/
 
 *.exe
 *.o
