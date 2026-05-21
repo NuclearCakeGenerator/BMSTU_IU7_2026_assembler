@@ -4,16 +4,16 @@ LDLIBS = -lm
 
 OUT_DIR = out
 
-all: $(OUT_DIR)/matrix_mul
+all: run
 
 $(OUT_DIR):
 	mkdir -p $(OUT_DIR)
 
-$(OUT_DIR)/matrix_mul: main.c | $(OUT_DIR)
+app.exe: main.c | $(OUT_DIR)
 	$(CC) $(CFLAGS) -o $@ $< $(LDLIBS)
 
-run: $(OUT_DIR)/matrix_mul
-	@$(OUT_DIR)/matrix_mul
+run: app.exe
+	@./app.exe
 
 clean:
 	rm -rf $(OUT_DIR)
