@@ -14,7 +14,5 @@ qemu-system-aarch64 \
   \
   -boot d \
   \
-  -virtfs local,path=.,mount_tag=host0,security_model=none,id=host0 \
-
-exit
+  -virtfs local,path=.,mount_tag=host0,security_model=none,id=host0
   
