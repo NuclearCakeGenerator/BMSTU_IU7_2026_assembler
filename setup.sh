@@ -12,7 +12,7 @@ fi
 echo -e "${BLUE}INSTALLING DEPENDENCIES...${NC}"
 apt update
 apt upgrade -y
-apt install -y nasm make gcc gdb libgtk-3-dev
+apt install -y nasm make gcc gdb libgtk-3-dev g++-aarch64-linux-gnu
 
 echo -e "${BLUE}SETTING UP ENVIRONMENT...${NC}"
 mkdir -p .vscode

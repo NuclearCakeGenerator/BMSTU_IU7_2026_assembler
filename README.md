@@ -8,57 +8,7 @@ or
 2. Install `make`, `nasm` etc manually:
 
 ```bash
-sudo apt update && sudo apt upgrade -y && sudo apt install -y nasm make gcc gdb libgtk-3-dev
+sudo apt update && sudo apt upgrade -y && apt install -y nasm make gcc gdb libgtk-3-dev g++-aarch64-linux-gnu
 ```
 
-For convienient build and run shortcuts create in `.vscode/` these files (`setup.sh` can do this for you):
-
-`launch.json`
-```
-{
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "name": "Debug Assembly (LLDB)",
-      "type": "lldb",
-      "request": "launch",
-      "program": "${fileDirname}/app.exe",
-      "cwd": "${fileDirname}",
-      "stopOnEntry": true,
-      "preLaunchTask": "build-asm"
-    },
-    {
-      "name": "Debug Assembly (GDB)",
-      "type": "cppdbg",
-      "request": "launch",
-      "program": "${fileDirname}/app.exe",
-      "cwd": "${fileDirname}",
-      "stopAtEntry": true,
-      "preLaunchTask": "build-asm",
-      "MIMode": "gdb",
-      "miDebuggerPath": "/usr/bin/gdb",
-      "externalConsole": false
-    }
-  ]
-}
-```
-
-`tasks.json`
-```
-{
-    "version": "2.0.0",
-    "tasks": [
-        {
-            "label": "build-asm",
-            "type": "shell",
-            "command": "make",
-            "group": "build",
-            "options": {
-                "cwd": "${fileDirname}"
-            }
-        }
-    ]
-}
-```
-
-This configuration will allow you to build and run your specific lab in debug mode by simply press `F5` when any file of this lab is currently opened in editor.
+.vscode configuration will allow you to build and run your specific lab in debug mode by simply press `F5` when any file of this lab is currently opened in editor.
