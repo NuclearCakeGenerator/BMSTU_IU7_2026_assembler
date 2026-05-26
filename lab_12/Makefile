@@ -1,7 +1,7 @@
 CXX := aarch64-linux-gnu-g++
 CXXFLAGS ?= -std=c++17 -O2 -Wall -Wextra -pedantic
 
-TARGET := array_add.exe
+TARGET := app.exe
 SRC_DIR := src
 INCLUDES := -I$(SRC_DIR)
 
