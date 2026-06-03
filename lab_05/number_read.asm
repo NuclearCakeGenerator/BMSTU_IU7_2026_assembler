@@ -91,6 +91,7 @@ end_fetch_digits:
 end_conversion:
     mov rbx, rax
     pop r12
+    ; the resulting number is in rbx
     ret
 
 invalid_digit:
