@@ -1,0 +1,14 @@
+asm является inline функцей
+clang++ -E main.cpp > main.i 
+
+clang++ -S -O0 main.i -o main.s
+или
+clang++ -S -O0 -masm=intel main.cpp -o main_intel.s
+
+clang++ -c main_intel.s -0 main.o 
+
+clang++ main.o -o main.exe
+
+
+для сборки с asm файлом
+clang++ -std=c++20 -O0 main.cpp string_ops.s -o main && ./main
