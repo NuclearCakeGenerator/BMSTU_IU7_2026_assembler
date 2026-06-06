@@ -33,7 +33,7 @@ if [ $RESULT -ne 0 ]; then
 fi
 
 if [ $RESULT -eq 0 ]; then
-    if [ -x ./x32_app ]; then
+    if [ -x ./x32_app.exe ]; then
         echo "✓ Build successful: x32_app"
         echo "Running tests..."
         ./x32_app.exe
