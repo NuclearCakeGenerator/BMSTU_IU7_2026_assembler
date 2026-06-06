@@ -1,8 +1,8 @@
 .intel_syntax noprefix
 .text
-.globl _asm_memmove_copy32
+.globl asm_memmove_copy32
 .p2align 4, 0x90
-_asm_memmove_copy32:
+asm_memmove_copy32:
     push ebp
     mov ebp, esp
     push esi

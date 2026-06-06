@@ -1,12 +1,12 @@
 .intel_syntax noprefix
 .text
-.globl _asm_memmove_copy64
+.globl asm_memmove_copy64
 
 
 ; rdi = dst
 ; rsi = src
 ; rdx = len
-_asm_memmove_copy64:
+asm_memmove_copy64:
     mov r8, rdi
     test rdx, rdx
     je done
