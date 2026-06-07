@@ -50,5 +50,6 @@ STDOUT    EQU 1
     pop rdx
     pop rsi
     pop rdi
-    pop rax
+    ; pop rax
+    add sp, 8
 %endmacro

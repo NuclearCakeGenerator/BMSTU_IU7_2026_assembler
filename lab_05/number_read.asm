@@ -41,9 +41,9 @@ check_length:
     mov r12, rcx ; save number length
 
 convert_abs:
-    xor rax, rax ; for the resulting number
+    xor ax, ax ; for the resulting number
 fetch_digit:
-    xor rdx, rdx  ; for fetched character
+    xor dl, dl  ; for fetched character
     mov rdi, rsi
     add rdi, r12
     sub rdi, rcx ; calculate the address of the current digit
@@ -77,8 +77,8 @@ check_lowercase:
     jmp append_digit
 
 append_digit:
-    shl rax, 4
-    or rax, rdx
+    shl ax, 4
+    or al, dl
 
     loop fetch_digit
 end_fetch_digits:
@@ -87,10 +87,11 @@ end_fetch_digits:
 ; We can now convert it to two's complement if it's negative
     cmp rsi, 0
     je end_conversion
-    neg rax
+    neg ax
 end_conversion:
-    mov rbx, rax
+    mov bx, ax
     pop r12
+    ; the resulting number is in bx
     ret
 
 invalid_digit:

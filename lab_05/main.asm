@@ -24,7 +24,7 @@ main:
 event_loop:
     call get_option
 
-    mov rdi, rbx
+    mov di, bx
     call qword [handlers + rax*8]
     jmp event_loop
 end_main:

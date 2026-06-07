@@ -4,23 +4,23 @@
 
 global print_ub_number
 
-BITS_TO_PRINT equ 64
+BITS_TO_PRINT equ 16
 
 section .data
     bit_char db 0, CHAR_CARRIAGE_RETURN, CHAR_LINE_FEED
 
 section .text
 print_ub_number:
-; the number is in rdi
+; the number is in di
     mov rcx, BITS_TO_PRINT
     push rbx ; preserved reg (for modifiable number)
-    mov rbx, rdi ; copy the number to rbx for modification
+    mov bx, di ; copy the number to rbx for modification
 print_loop:
-    mov rdx, rbx
-    mov r8, 1 << 63
-    and rdx, r8
-    shl rbx, 1
-    cmp rdx, 0
+    mov dx, bx
+    mov r8w, 1 << BITS_TO_PRINT - 1
+    and dx, r8w
+    shl bx, 1
+    cmp dx, 0
     je print_zero
     mov byte [bit_char], '1'
     jmp print_bit
