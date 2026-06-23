@@ -105,7 +105,7 @@ bool test_memmove_overlap_left()
 	char expected[] = "23445";
 	char actual[] = "12345";
 
-	asm_memmove_copy64(actual, actual + 1, 83);
+	asm_memmove_copy64(actual, actual + 1, 3);
 
 	char* res = actual;
 	char* correct_ans = expected;
