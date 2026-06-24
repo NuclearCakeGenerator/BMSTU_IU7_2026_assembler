@@ -1,0 +1,2 @@
+N = 9
+The difference is caused by 'loop' command doing two commands at once
